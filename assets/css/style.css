@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brownsugar: #BE6E46;
+    --teagreen: #CDE7B0;
+    --cambridge: #A3BFA8;
+    --shadowblue: #7286A0;
+    --ebony: #59594A;
+}
+
+body {
+    font-family: 'Andada Pro', serif;
+}
+
+.dashboard {
+    text-align: center;
+    padding: 20px;
+    height: 100px;
+    background: var(--cambridge);
+    background: linear-gradient(90deg, rgba(223, 233, 224, 1) 0%, rgba(163, 191, 168, 1) 35%, rgba(205, 231, 176, 1) 100%);
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+}
+
+h1,
+h2,
+li {
+    font-family: 'Andada Pro', serif;
+}
+
+#btn {
+    margin: 10px 0;
+    background-color: var(--shadowblue) !important;
+    border-color: var(--shadowblue) !important;
+}
