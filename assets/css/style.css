@@ -36,8 +36,17 @@ li {
     font-family: 'Andada Pro', serif;
 }
 
-#btn {
+#search-btn {
     margin: 10px 0;
     background-color: var(--shadowblue) !important;
     border-color: var(--shadowblue) !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+#city-info {
+    border: 1px solid var(--ebony);
+    padding: 20px;
 }
