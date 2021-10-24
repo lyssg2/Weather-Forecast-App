@@ -28,6 +28,13 @@ body {
 .container {
     margin: 20px;
     padding: 20px;
+    font-family: 'Andada Pro', serif;
+}
+
+#forecast {
+    background: var(--ebony) !important;
+    border-color: var(--ebony) !important;
+    font-family: 'Andada Pro', serif;
 }
 
 h1,
@@ -36,10 +43,12 @@ li {
     font-family: 'Andada Pro', serif;
 }
 
-#search-btn {
+#search-btn,
+#clear-history {
     margin: 10px 0;
     background-color: var(--shadowblue) !important;
     border-color: var(--shadowblue) !important;
+    font-family: 'Andada Pro', serif;
 }
 
 li {
