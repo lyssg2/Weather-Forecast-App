@@ -145,7 +145,6 @@ $("#clear-history").click(function() {
 
 // Retrieves searched cities from local storage and displays them on page
 function renderSearchHistory(pastSearch) {
-
     searchHistoryEl = document.createElement("button")
     searchHistoryEl.setAttribute("class", "btn btn-outline-dark btn-lg btn-block");
     searchHistoryEl.textContent = pastSearch
@@ -160,6 +159,7 @@ function renderSearchHistory(pastSearch) {
     })
 }
 
+// If enter button is pressed, it will function the same as the submt button
 $(document).keypress(function(event) {
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if (keycode == '13') {
