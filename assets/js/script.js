@@ -13,6 +13,7 @@ let searchHistoryEl = document.getElementById("search-history-buttons")
 let currentHour = moment().hours();
 let cities = []
 let currentContent = $("city-info")
+let cityContent = $("city-content")
 
 // APIkey variable
 const APIkey = "8708010a185a4985cc529f417e310a09"
@@ -34,6 +35,8 @@ var saveSearch = function() {
 function renderWeather() {
 
     let cityInput = $('#city-search').val()
+
+    document.getElementById("city-pic").innerHTML = ""
 
     let url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + APIkey
 
@@ -83,6 +86,8 @@ function renderWeather() {
             } else {
                 UVIndex.setAttribute("class", "badge badge-danger")
             }
+            // Clears the input field
+            $('#city-search').val('')
 
             // Appends UV Index to page
             UVIndex.innerHTML = data.current.uvi
@@ -90,6 +95,7 @@ function renderWeather() {
             currentUVEl.append(UVIndex)
 
             const forecastEl = document.querySelectorAll(".forecast")
+
 
             for (let i = 0; i < 5; i++) {
                 forecastEl[i].innerHTML = ""
@@ -134,6 +140,7 @@ function renderWeather() {
 $("#clear-history").click(function() {
     localStorage.clear();
     searchHistory = []
+    $('#search-history').remove()
 });
 
 // Retrieves searched cities from local storage and displays them on page
@@ -148,8 +155,18 @@ function renderSearchHistory(pastSearch) {
     // When recent search button is clicked, get previous search results
     searchHistoryEl.addEventListener("click", function() {
         document.getElementById("city-search").value = $(this).text()
-        currentContent.text("")
+        document.getElementById("city-pic").innerHTML = ""
         renderWeather()
-
     })
 }
+
+$(document).keypress(function(event) {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == '13') {
+        event.preventDefault()
+        var city = inputEl.value.trim()
+        renderWeather()
+        saveSearch()
+        renderSearchHistory(city)
+    }
+});
